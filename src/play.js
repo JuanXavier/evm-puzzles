@@ -180,9 +180,7 @@ async function readSolution(askForData, askForValue) {
 
 async function runPuzzle(puzzleCode, { data, value }) {
 	const [s] = await ethers.getSigners();
-
 	const address = '0xffffffffffffffffffffffffffffffffffffffff';
-
 	await hre.network.provider.send('hardhat_setCode', [address, `0x${puzzleCode}`]);
 
 	data = data.startsWith('0x') ? data : `0x${data}`;
